@@ -17,5 +17,11 @@
             $this->question = $question;
             
         }
+
+        public function bdd(){
+            $pdo = new PDO('mysql:host=localhost;dbname=tous_au_numerique', 'segond', 'loudmila32');
+            $req = $pdo->query('INSERT INTO visiteur (nom, prenom, societe, question) 
+                    VALUES ("' . $this->name .'" , "' . $this->firstname .'" , "' . $this->society .'" , "' . $this->question .'")');
+        }
     }
 ?>
